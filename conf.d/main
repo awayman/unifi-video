@@ -1,2 +1,3 @@
 #!/bin/sh -ex
-echo "do nothing - core requires no post-package configuration commands"
+wget -O - http://www.ubnt.com/downloads/unifi-video/apt-3.x/unifi-video.gpg.key | apt-key add -; sh -c "echo \"deb [arch=amd64] http://www.ubnt.com/downloads/unifi-video/apt-3.x wheezy ubiquiti\" > /etc/apt/sources.list.d/unifi-video.list"
+apt-get update && apt-get install unifi-video -y
